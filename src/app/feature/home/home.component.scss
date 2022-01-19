@@ -1,0 +1,13 @@
+.v-container {
+  display: block;
+  height: calc(100vh - 50px);
+  overflow: hidden;
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+//https://mediaboom.com/#/home
