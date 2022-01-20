@@ -1,32 +1,46 @@
-$header_height: 50px;
-
 :host {
   display: grid;
   height: 100%;
   grid-template-rows: 1fr min-content;
 }
 
-.header {
-  height: $header_height;
+header {
+  height: var(--header-height);
 
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 10;
 
   //debug
   border: solid 1px red;
+  // background-color: rgb(103, 103, 247);
+
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+
+  nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
 }
 
-.main {
-  margin-top: $header_height;
+.content-container {
+  margin-top: var(--header-height);
 
   //debug
   height: 200vh;
   border: solid 1px green;
 }
 
-.footer {
+footer {
   height: 50px;
 
   //debug

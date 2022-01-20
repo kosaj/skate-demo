@@ -1,5 +1,42 @@
-<header class="header-container"></header>
-<main class="content-container">
+<header class="header-container">
+  <ng-container *ngIf="mobile$ | async; else regularView">
+    <span style="color: red">HELLLLO</span>
+  </ng-container>
+  <ng-template #regularView>
+    <span style="color: red">NOPE</span>
+    <button mat-button (click)="toggle()">TOGGLE</button>
+  </ng-template>
+  <!-- <img src="./assets/images/logo.png" alt="logo" />
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link routerLink="about" routerLinkActive #rla="routerLinkActive">
+      o nas
+    </a>
+    <a mat-tab-link>instruktorzy</a>
+    <a mat-tab-link>aktualności</a>
+    <a mat-tab-link>cennik</a>
+    <a mat-tab-link>kontakt</a>
+  </nav> -->
+  <!-- [backgroundColor]="background" -->
+  <!-- <nav>
+    <a mat-button routerLink="about">o nas</a>
+    <button mat-button routerLink="team">instruktorzy</button>
+    <a mat-button routerLink="news">aktualności</a>
+    <a mat-button routerLink="price-list">cennik</a>
+    <a mat-button routerLink="contact">kontakt</a>
+  </nav> -->
+</header>
+<!-- <main class="content-container">
+  
   <router-outlet></router-outlet>
+</main> -->
+
+<main class="content-container">
+  <mat-drawer-container>
+    <mat-drawer #drawer> SOMETHING IN THE WAY!!! </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </main>
+
 <footer class="footer-container"></footer>
